@@ -1,0 +1,53 @@
+<div class="container">
+<h1 style="text-align: center">Health Details</h1>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <div class="form-group">
+                    <label for="nfame">Weight:</label>
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    name="weight"
+                    placeholder="Enter Your Weight"
+                    ngModel 
+                    required
+                    #weight="ngModel"
+            >
+            <span class="help-block" *ngIf="!weight.valid && weight.touched">Please Enter Weight</span>
+
+            </div>
+                <div class="form-group">
+                    <label for="lname">Height:</label>
+                    <input 
+                    type="text" 
+                    class="form-control"
+                    placeholder="Enter your Height"
+                    ngModel 
+                    name="height" 
+                    required
+                    #height="ngModel"
+                    >
+                    <span class="help-block" *ngIf="!height.valid && height.touched">Please enter Height</span>
+                </div>
+                <div class="form-group">
+                    <label for="target">Fitness Goal :&nbsp;</label>
+                    <label class="radio-inline">&nbsp;<input type="radio" name="optradio">&nbsp;Weight Gain</label>
+                    <label class="radio-inline">&nbsp;<input type="radio" name="optradio">&nbsp;Weight Loss</label>
+                    <label class="radio-inline">&nbsp;<input type="radio" name="optradio">&nbsp;Weight Maintain</label>
+                </div>
+                <div class="form-group">
+                        <label for="target">Which sports do you Play:&nbsp;</label>
+                        <select id="target">
+                          <option value="cricket">Cricket</option>
+                          <option value="football">Football</option>
+                          <option value="kabadi">Kabadi</option>
+                          <option value="other">Other</option>
+                        </select>
+                </div>
+                    <input type="submit" 
+                    class="btn btn-success" 
+                    name="submit"
+                    value="Submit"
+                    [disabled]="!f.valid"
+                    >
+    </form>
+</div>

@@ -1,0 +1,17 @@
+.footer{
+    background: linear-gradient(to top left, #000000 53%, gray 97%);
+    text-align: center;
+    color: white;
+}
+/* .card-img-top{
+    /* padding: 50px; */
+  /* transition: transform .1s; */
+  /* width: 200px;
+  height: 200px; */
+  /* margin: 0 auto; */
+/* } */ 
+.card-img-top:hover{
+    -ms-transform: scale(1.5); 
+  -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+}
