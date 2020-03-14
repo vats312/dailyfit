@@ -196,11 +196,11 @@
 
   @font-face {
 	font-family: 'RubikRegular';
-	src: url('Rubik-Light.ttf');  
+	src: url('../Rubik-Light.ttf');  
 }
 @font-face {
 	font-family: 'RubikBold';
-	src: url('Rubik-Regular.ttf');  	
+	src: url('../Rubik-Regular.ttf');  	
 }
 
 body {

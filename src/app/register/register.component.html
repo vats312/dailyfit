@@ -1,111 +1,109 @@
 <!-- <app-header></app-header> -->
-<div class="container" >
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">RK CLICKS</a>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link" routerLink="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" routerLink="/about"routerLinkActive="active">About Us</a>
-                        </li>   
-                        <li class="nav-item">
-                        <a class="nav-link" routerLink="/contact" routerLinkActive="active">Contact us</a>
-                        </li>
-                        </ul>
-                </div>
-        </nav>
-    <h1 style="text-align: center">Register Form</h1>
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" >
+<h1 style="text-align: center">Register Form</h1>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+                <label for="nfame">First Name:</label>
+                <input 
+                type="text" 
+                class="form-control" 
+                name="fname"
+                placeholder="Enter First Name"
+                ngModel 
+                required
+                #fname="ngModel"
+        >
+        <span class="help-block" *ngIf="!fname.valid && fname.touched">Please Enter Valid First Name</span>
+
+        </div>
             <div class="form-group">
-                    <label for="nfame">First Name:</label>
-                    <input 
-                    type="text" 
-                    class="form-control" 
-                    name="fname"
-                    placeholder="Enter First Name"
-                    ngModel 
-                    required
-                    #fname="ngModel"
-            >
-            <span class="help-block" *ngIf="!fname.valid && fname.touched">Please Enter Valid First Name</span>
+                <label for="lname">Last Name:</label>
+                <input 
+                type="text" 
+                class="form-control"
+                placeholder="Enter Last Name"
+                ngModel 
+                name="lname" 
+                required
+                #lname="ngModel"
+                >
+                <span class="help-block" *ngIf="!lname.valid && lname.touched">Please enter Valid Last Name</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Id:</label>
+                <input 
+                type="email" 
+                class="form-control"
+                placeholder="Enter Email"
+                ngModel 
+                name="email"
+                required
+                email
+                #email="ngModel"
+                >
+            <span class="help-block" *ngIf="!email.valid && email.touched">Please Enter Valid Email Id</span>
+            </div>
+            <div class="form-group">
+                <label for="mobno">Mobile No:</label>
+                <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Enter Mobile No"
+                ngModel
+                name="mobno"
+                required
+                minlength="10"
+                maxlength="10"
+                #mobno="ngModel"
+                >
+            <span class="help-block" *ngIf="!mobno.valid && mobno.touched">Please Enter Valid Mobile No</span>
 
             </div>
-                <div class="form-group">
-                    <label for="lname">Last Name:</label>
-                    <input 
-                    type="text" 
-                    class="form-control"
-                    placeholder="Enter Last Name"
-                    ngModel 
-                    name="lname" 
-                    required
-                    #lname="ngModel"
-                    >
-                    <span class="help-block" *ngIf="!lname.valid && lname.touched">Please enter Valid Last Name</span>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Id:</label>
-                    <input 
-                    type="email" 
-                    class="form-control"
-                    placeholder="Enter Email"
-                    ngModel 
-                    name="email"
-                    required
-                    email
-                    #email="ngModel"
-                    >
-                <span class="help-block" *ngIf="!email.valid && email.touched">Please Enter Valid Email Id</span>
-                </div>
-                <div class="form-group">
-                    <label for="mobno">Mobile No:</label>
-                    <input 
-                    type="text" 
-                    class="form-control" 
-                    placeholder="Enter Mobile No"
-                    ngModel
-                    name="mobno"
-                    required
-                    minlength="10"
-                    maxlength="10"
-                    #mobno="ngModel"
-                    >
-                <span class="help-block" *ngIf="!mobno.valid && mobno.touched">Please Enter Valid Mobile No</span>
+            <div class="form-group">
+                <label for="bdate">Birth Date:</label>
+                <input 
+                type="date" 
+                class="form-control"
+                ngModel 
+                name="bdate"
+                required
+                #bdate="ngModel"
+                >
+                <span class="help-block" *ngIf="!bdate.valid && bdate.touched">Please Enter Valid Birth Date</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input 
+                type="password" 
+                class="form-control"
+                placeholder="Enter Password"
+                ngModel 
+                name="password"
+                required
+                minlength="4"
+                #password="ngModel">
+                <span class="help-block" *ngIf="!password.valid && password.touched">Please Enter Valid Password</span>
+            </div>
+            <div class="btn_cnd">
+                <input type="submit" 
+                class="btn btn-secondary" 
+                name="submit"
+                value="Submit"
+                id="sub_btn"
+                [disabled]="!f.valid"
+                >
+            </div>
+</form>
+</div>
 
-                </div>
-                <div class="form-group">
-                    <label for="bdate">Birth Date:</label>
-                    <input 
-                    type="date" 
-                    class="form-control"
-                    ngModel 
-                    name="bdate"
-                    required
-                    #bdate="ngModel"
-                    >
-                    <span class="help-block" *ngIf="!bdate.valid && bdate.touched">Please Enter Valid Birth Date</span>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input 
-                    type="password" 
-                    class="form-control"
-                    placeholder="Enter Password"
-                    ngModel 
-                    name="password"
-                    required
-                    minlength="4"
-                    #password="ngModel">
-                    <span class="help-block" *ngIf="!password.valid && password.touched">Please Enter Valid Password</span>
-                </div>
-                    <input type="submit" 
-                    class="btn btn-success" 
-                    name="submit"
-                    value="Submit"
-                    [disabled]="!f.valid"
-                    >
-    </form>
- </div>
-  
+
+</body>
+</html>

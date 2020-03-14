@@ -1,3 +1,37 @@
 input.ng-invalid.ng-touched{
-    border: 1px solid red;
+    border: 2px solid red;
+}
+body{
+    
+  background-color: black; /* For browsers that do not support gradients */
+  color: white;
+}
+
+h1 {
+    font-family: 'RubikBold';
+}
+label{
+    font-family: 'RubikRegular';
+}
+.btn_cnd{
+    padding-bottom: 16px;
+    text-align: center;
+}
+#sub_btn {
+    width: 50%;
+}
+    
+    
+
+.btn-secondary:disabled{
+    color: #000000;
+    opacity: 1;
+    background-color: white;
+    border:1px solid red;
+}
+.btn-secondary:enabled{
+    color: black;
+    opacity: 1;
+    background-color: white;
+    border:1px solid green;
 }
